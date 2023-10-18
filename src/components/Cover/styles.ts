@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CoverContainer = styled.header`
-  background: ${(props) => props.theme['base-profile']};
+  background: ${(props) => props.theme['base-border']};
 
   display: flex;
   align-items: center;
@@ -34,6 +34,7 @@ export const BackLeft = styled.div`
 
   left: 0;
   top: 4.5rem;
+  z-index: 0;
 `
 
 export const BackRight = styled.div`
