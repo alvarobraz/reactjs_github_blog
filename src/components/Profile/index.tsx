@@ -9,39 +9,53 @@ import { GitHubLink, ProfileContainer } from './styles'
 import { NavLink } from 'react-router-dom'
 import Avatar from '../../assets/avatar.png'
 
-export function Profile() {
+interface PropsProfile {
+  avataUrl: string
+  name: string
+  url: string
+  bio?: string
+  login: string
+  company?: string
+  followers: number
+}
+
+export function Profile({
+  avataUrl,
+  name,
+  url,
+  bio,
+  login,
+  company,
+  followers,
+}: PropsProfile) {
   return (
     <ProfileContainer>
-      <img src={Avatar} alt="Avatar" />
+      <img src={avataUrl} alt="Avatar" />
       <div>
         <div>
-          <h1>Cameron Williamson</h1>
+          <h1>{name}</h1>
           <GitHubLink>
-            <NavLink to="/">
+            <a href={url} target="_blank" rel="noreferrer">
               GITHUB
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-            </NavLink>
+            </a>
           </GitHubLink>
         </div>
         <div>
-          <p>
-            Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-            viverra massa quam dignissim aenean malesuada suscipit. Nunc,
-            volutpat pulvinar vel mass.
-          </p>
+          <p>{bio}</p>
         </div>
         <div>
           <p>
             <FontAwesomeIcon icon={faLink} />
-            cameronwll
+            {login}
           </p>
           <p>
             <FontAwesomeIcon icon={faBuilding} />
-            Rocketseat
+            {company}
           </p>
           <p>
             <FontAwesomeIcon icon={faUserGroup} />
-            32 seguidores
+            {followers} seguidores
           </p>
         </div>
       </div>
