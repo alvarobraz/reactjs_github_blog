@@ -1,5 +1,5 @@
-import { Post } from '../components/Post'
-import { Profile } from '../components/Profile'
+import { PostCard } from '../../components/Post'
+import { Profile } from '../../components/Profile'
 import { HederPublish, HomeContainer } from './styles'
 
 export function Home() {
@@ -21,28 +21,28 @@ export function Home() {
         <p>6 publicações</p>
       </HederPublish>
       <input placeholder="Buscar conteúdo" />
-      <Post
+      <PostCard
         title="JavaScript data types and data structures"
         date="1"
         body="Programming languages all have built-in data structures, but these often
       differ from one language to another. This article attempts to list the
       built-in data structures available in ..."
       />
-      <Post
+      <PostCard
         title="JavaScript data types and data structures"
         date="1"
         body="Programming languages all have built-in data structures, but these often
       differ from one language to another. This article attempts to list the
       built-in data structures available in ..."
       />
-      <Post
+      <PostCard
         title="JavaScript data types and data structures"
         date="1"
         body="Programming languages all have built-in data structures, but these often
       differ from one language to another. This article attempts to list the
       built-in data structures available in ..."
       />
-      <Post
+      <PostCard
         title="JavaScript data types and data structures"
         date="1"
         body="Programming languages all have built-in data structures, but these often

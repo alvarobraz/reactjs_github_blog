@@ -6,8 +6,6 @@ import {
   faUserGroup,
 } from '@fortawesome/free-solid-svg-icons'
 import { GitHubLink, ProfileContainer } from './styles'
-import { NavLink } from 'react-router-dom'
-import Avatar from '../../assets/avatar.png'
 
 interface PropsProfile {
   avataUrl: string

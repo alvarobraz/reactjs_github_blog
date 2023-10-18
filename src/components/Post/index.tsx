@@ -6,7 +6,7 @@ interface PropsPost {
   body: string
 }
 
-export function Post({ title, date, body }: PropsPost) {
+export function PostCard({ title, date, body }: PropsPost) {
   return (
     <PostContainer>
       <div>
