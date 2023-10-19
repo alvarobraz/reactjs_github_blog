@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { NavLink } from 'react-router-dom'
 import { PostInfoContainer } from './styles'
 import { GitHubLink } from '../Profile/styles'
@@ -9,16 +10,15 @@ import {
   faCalendarDay,
   faComment,
 } from '@fortawesome/free-solid-svg-icons'
+import { PropsPostInfo } from '../../contexts/GithubBlogContext'
 
-interface PropsPostInfo {
-  url: string
-  title: string
-  login: string
-  date: string
-  comments: string
-}
-
-export function PostInfo({ url, title, login, date, comments }: PropsPostInfo) {
+export function PostInfo({
+  html_url,
+  title,
+  user,
+  created_at,
+  comments,
+}: PropsPostInfo) {
   return (
     <PostInfoContainer>
       <div>
@@ -28,7 +28,7 @@ export function PostInfo({ url, title, login, date, comments }: PropsPostInfo) {
             VOLTAR
           </NavLink>
           <GitHubLink>
-            <a href={url} target="_blank" rel="noreferrer">
+            <a href={html_url} target="_blank" rel="noreferrer">
               GITHUB
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </a>
@@ -38,11 +38,15 @@ export function PostInfo({ url, title, login, date, comments }: PropsPostInfo) {
         <div>
           <p>
             <FontAwesomeIcon icon={faLink} />
-            {login}
+            {user?.login}
           </p>
           <p>
             <FontAwesomeIcon icon={faCalendarDay} />
-            Há {date} dia
+            {Number(created_at) === 0
+              ? `Hoje`
+              : Number(created_at) > 1
+              ? `Há ${created_at} dias`
+              : `Há ${created_at} dia`}
           </p>
           <p>
             <FontAwesomeIcon icon={faComment} />

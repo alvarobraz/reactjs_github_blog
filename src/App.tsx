@@ -5,12 +5,15 @@ import { Router } from './Router'
 
 import { defaultTheme } from './styles/themes/default'
 import { GlobalStyle } from './styles/global'
+import { GithubBlogProvider } from './contexts/GithubBlogContext'
 
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
-        <Router />
+        <GithubBlogProvider>
+          <Router />
+        </GithubBlogProvider>
       </BrowserRouter>
 
       <GlobalStyle />

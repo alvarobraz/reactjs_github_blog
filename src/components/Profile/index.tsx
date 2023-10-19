@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowUpRightFromSquare,
@@ -6,21 +7,12 @@ import {
   faUserGroup,
 } from '@fortawesome/free-solid-svg-icons'
 import { GitHubLink, ProfileContainer } from './styles'
-
-interface PropsProfile {
-  avataUrl: string
-  name: string
-  url: string
-  bio?: string
-  login: string
-  company?: string
-  followers: number
-}
+import { PropsProfile } from '../../contexts/GithubBlogContext'
 
 export function Profile({
-  avataUrl,
+  // eslint-disable-next-line camelcase
+  avatar_url,
   name,
-  url,
   bio,
   login,
   company,
@@ -28,12 +20,16 @@ export function Profile({
 }: PropsProfile) {
   return (
     <ProfileContainer>
-      <img src={avataUrl} alt="Avatar" />
+      <img src={avatar_url} alt="Avatar" />
       <div>
         <div>
           <h1>{name}</h1>
           <GitHubLink>
-            <a href={url} target="_blank" rel="noreferrer">
+            <a
+              href={`https://github.com/${login}`}
+              target="_blank"
+              rel="noreferrer"
+            >
               GITHUB
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </a>
