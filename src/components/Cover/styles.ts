@@ -21,7 +21,7 @@ export const CoverContainer = styled.header`
 `
 
 export const BackLeft = styled.div`
-  background: url('http://localhost:5173/back_left_cover.svg');
+  background: url('https://reactjs-github-blog.vercel.app/back_left_cover.svg');
 
   width: 25.5325rem;
   height: 11.75rem;
@@ -38,7 +38,7 @@ export const BackLeft = styled.div`
 `
 
 export const BackRight = styled.div`
-  background: url('http://localhost:5173/back_right_cover.svg');
+  background: url('https://reactjs-github-blog.vercel.app/back_right_cover.svg');
 
   width: 23.1875rem;
   height: 14.75rem;
