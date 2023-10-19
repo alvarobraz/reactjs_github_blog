@@ -4,6 +4,7 @@ import { PostContainer } from './styles'
 import { useContextSelector } from 'use-context-selector'
 import { GithubBlogContext } from '../../contexts/GithubBlogContext'
 import { useEffect } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 export function Post() {
   const { id } = useParams()
@@ -17,11 +18,6 @@ export function Post() {
       return context.postId
     }
   })
-
-  const paragraphs = postId?.body?.split('\r\n')
-  const paragraphsMapped = paragraphs?.map((paragraph, index) => (
-    <p key={index}>{paragraph}</p>
-  ))
 
   useEffect(() => {
     fetchPostId(id)
@@ -37,7 +33,9 @@ export function Post() {
         comments={postId?.comments}
       />
       <div>
-        <p>{paragraphsMapped}</p>
+        <ReactMarkdown>
+          {String(postId?.body).replace(/\s$/g, '')}
+        </ReactMarkdown>
       </div>
     </PostContainer>
   )

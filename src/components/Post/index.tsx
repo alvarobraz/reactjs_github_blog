@@ -2,8 +2,9 @@
 import { NavLink } from 'react-router-dom'
 import { PropsPost } from '../../contexts/GithubBlogContext'
 import { PostContainer } from './styles'
+import ReactMarkdown from 'react-markdown'
 
-export function PostCard({ number, title, created_at, body }: PropsPost) {
+export function PostCard({ number, title, created_at, children }: PropsPost) {
   return (
     <NavLink to="/">
       <PostContainer>
@@ -18,7 +19,7 @@ export function PostCard({ number, title, created_at, body }: PropsPost) {
                 : `Hoje`}
             </p>
           </div>
-          <p>{body}</p>
+          <ReactMarkdown>{String(children).replace(/\s$/g, '')}</ReactMarkdown>
         </NavLink>
       </PostContainer>
     </NavLink>

@@ -17,7 +17,8 @@ export interface PropsPost {
   number?: number
   title: string
   created_at: string
-  body: string
+  body?: string
+  children: React.ReactNode
 }
 
 export interface PropsPostInfo {

@@ -60,13 +60,16 @@ export function Home() {
       <input placeholder="Buscar conteúdo" {...register('query')} />
       {posts?.length !== 0
         ? posts?.map((post) => (
-            <PostCard
-              key={post.number}
-              number={post.number}
-              title={post.title}
-              created_at={post.created_at}
-              body={post.body.substring(0, 200)}
-            />
+            <>
+              <PostCard
+                key={post.number}
+                number={post.number}
+                title={post.title}
+                created_at={post.created_at}
+              >
+                {post.body!.substring(0, 150)!}
+              </PostCard>
+            </>
           ))
         : ''}
     </HomeContainer>
