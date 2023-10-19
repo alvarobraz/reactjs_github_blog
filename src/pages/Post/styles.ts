@@ -29,4 +29,16 @@ export const PostContainer = styled.main`
       line-height: 160%;
     }
   }
+
+  @media (max-width: 768px) {
+    margin-bottom: 5rem;
+
+    > div {
+      padding: 1.5rem 1rem;
+
+      p {
+        font-size: 0.875rem;
+      }
+    }
+  }
 `

@@ -98,4 +98,33 @@ export const PostInfoContainer = styled.section`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+
+    padding: 1rem 1.5rem;
+
+    > div {
+      > h1 {
+        font-size: 1rem;
+      }
+
+      div:nth-child(1) {
+        a {
+          font-size: 0.75rem;
+        }
+      }
+
+      div:nth-child(3) {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
 `

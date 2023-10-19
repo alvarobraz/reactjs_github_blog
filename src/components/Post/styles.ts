@@ -60,4 +60,33 @@ export const PostContainer = styled.header`
     border: 1px solid ${(props) => props.theme['base-label']};
     text-decoration: none;
   }
+
+  @media (max-width: 768px) {
+    a {
+      width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      padding: 1rem;
+
+      > div {
+        width: 100%;
+
+        h1 {
+          font-size: 1rem;
+          width: 80%;
+        }
+
+        p {
+          width: 20%;
+        }
+      }
+    }
+
+    a:hover {
+      width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      padding: 0.9375rem;
+    }
+  }
 `

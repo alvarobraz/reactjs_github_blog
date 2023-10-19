@@ -33,9 +33,19 @@ export const HomeContainer = styled.main`
     }
   }
 
-  /* @media (max-width: 768px) {
-    width: calc(100% - 2rem);
-  } */
+  @media (max-width: 768px) {
+    margin-bottom: 5rem;
+
+    input {
+      width: 100%;
+      height: 2.725rem;
+
+      margin: 6px 0;
+      padding: 6px 10px;
+
+      font-size: 0.75rem;
+    }
+  }
 `
 
 export const HederPublish = styled.header`
@@ -61,5 +71,17 @@ export const HederPublish = styled.header`
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 160%;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 1.5rem;
+
+    h1 {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+    }
   }
 `

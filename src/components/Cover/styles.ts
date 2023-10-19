@@ -13,14 +13,10 @@ export const CoverContainer = styled.header`
   }
 
   @media (max-width: 768px) {
-    /* a img {
-      position: relative;
-      top: 0.3rem;
-
-      width: 75%;
-
-      padding: 1rem 0;
-    } */
+    img {
+      width: 20%;
+      padding: 1.5rem 0 6.5rem 0;
+    }
   }
 `
 
@@ -35,6 +31,10 @@ export const BackLeft = styled.div`
   left: 0;
   top: 4.5rem;
   z-index: 0;
+
+  @media (max-width: 768px) {
+    background: transparent;
+  }
 `
 
 export const BackRight = styled.div`
@@ -47,4 +47,8 @@ export const BackRight = styled.div`
 
   right: 0;
   top: 1.875rem;
+
+  @media (max-width: 768px) {
+    background: transparent;
+  }
 `
